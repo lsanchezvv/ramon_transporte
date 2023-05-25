@@ -1628,6 +1628,11 @@ body.modal{
 .toggle-style > a{
   color: white;
 }
+
+.whatsapp {
+  background: gray; 
+  border-radius: 8px;
+}
 /*---------------------------------------------------*/
 /*	11) TOKYO MEDIA QUERIES (FOR SMALL DEVIVES)
 /*---------------------------------------------------*/
