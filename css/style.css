@@ -1633,6 +1633,20 @@ body.modal{
   background: gray; 
   border-radius: 8px;
 }
+
+.dark-dropdown {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.dark-dropdown option {
+  background-color: #222;
+  color: #fff;
+}
+
 /*---------------------------------------------------*/
 /*	11) TOKYO MEDIA QUERIES (FOR SMALL DEVIVES)
 /*---------------------------------------------------*/
