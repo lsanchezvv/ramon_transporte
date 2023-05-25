@@ -1625,6 +1625,9 @@ body.modal{
   display: block;
 }
 
+.toggle-style > a{
+  color: white;
+}
 /*---------------------------------------------------*/
 /*	11) TOKYO MEDIA QUERIES (FOR SMALL DEVIVES)
 /*---------------------------------------------------*/
