@@ -601,3 +601,7 @@ mobileToggleEsButton.addEventListener('click', () => languageToggler('es', true)
 
 mobileToggleEnButton.addEventListener('touchstart', () => languageToggler('en', true));
 mobileToggleEsButton.addEventListener('touchstart', () => languageToggler('es', true));
+
+
+mobileToggleEnButton.addEventListener('touchend', () => languageToggler('en', true));
+mobileToggleEsButton.addEventListener('touchend', () => languageToggler('es', true));
