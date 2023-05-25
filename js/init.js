@@ -593,5 +593,11 @@ function lngButtonViewToggle (lang, isMobile) {
 toggleEnButton.addEventListener('click', () => languageToggler('en'));
 toggleEsButton.addEventListener('click', () => languageToggler('es'));
 
+toggleEnButton.addEventListener('touchstart', () => languageToggler('en'));
+toggleEsButton.addEventListener('touchstart', () => languageToggler('es'));
+
 mobileToggleEnButton.addEventListener('click', () => languageToggler('en', true));
 mobileToggleEsButton.addEventListener('click', () => languageToggler('es', true));
+
+mobileToggleEnButton.addEventListener('touchstart', () => languageToggler('en', true));
+mobileToggleEsButton.addEventListener('touchstart', () => languageToggler('es', true));
