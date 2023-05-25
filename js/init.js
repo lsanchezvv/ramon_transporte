@@ -153,11 +153,11 @@ function tokyo_tm_modalbox_about(){
 	var closer		= modalBox.find('.close');
 	
 	opener.on('click',function(){
-		modalBox.addClass('opened');
+		// modalBox.addClass('opened');
 		return false;
 	});
 	closer.on('click',function(){
-		modalBox.removeClass('opened');
+		// modalBox.removeClass('opened');
 		return false;
 	});
 }
@@ -531,3 +531,40 @@ function tokyo_tm_owl_carousel(){
 	});
 	tokyo_tm_imgtosvg();
 }
+
+// Get the toggle buttons
+const toggleEnButton = document.getElementById('toggle-en');
+const toggleEsButton = document.getElementById('toggle-es');
+
+// Get the content sections
+const enContent = document.getElementsByClassName('en-content');
+const esContent = document.getElementsByClassName('es-content');
+
+// Add event listeners to the toggle buttons
+toggleEnButton.addEventListener('click', () => {
+  // Show English content, hide Spanish content
+  for (let i = 0; i < enContent.length; i++) {
+    enContent[i].style.display = 'block';
+  }
+  for (let i = 0; i < esContent.length; i++) {
+    esContent[i].style.display = 'none';
+  }
+
+  // Update active states of toggle buttons
+  toggleEnButton.classList.add('active');
+  toggleEsButton.classList.remove('active');
+});
+
+toggleEsButton.addEventListener('click', () => {
+  // Show Spanish content, hide English content
+  for (let i = 0; i < esContent.length; i++) {
+    esContent[i].style.display = 'block';
+  }
+  for (let i = 0; i < enContent.length; i++) {
+    enContent[i].style.display = 'none';
+  }
+
+  // Update active states of toggle buttons
+  toggleEsButton.classList.add('active');
+  toggleEnButton.classList.remove('active');
+});

@@ -1613,6 +1613,19 @@ body.modal{
 .cursor-outer.cursor-hover{opacity: 0;}
 
 /*---------------------------------------------------*/
+/*	12) By DEV - Multilanguage support
+/*---------------------------------------------------*/
+/* Hide Spanish content by default */
+.es-content {
+  display: none;
+}
+
+/* Show English content by default */
+.en-content {
+  display: block;
+}
+
+/*---------------------------------------------------*/
 /*	11) TOKYO MEDIA QUERIES (FOR SMALL DEVIVES)
 /*---------------------------------------------------*/
 
