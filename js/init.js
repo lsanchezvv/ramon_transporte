@@ -562,17 +562,25 @@ function languageToggler (lang) {
 }
 
 
-const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
-const languageDropdown = document.getElementById('languageDropdown');
+// const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+// const languageDropdown = document.getElementById('languageDropdown');
 
-mobileLanguageDropdown.addEventListener('change', (e) => {
-  const selectedLanguage = mobileLanguageDropdown.value;
-  languageToggler(selectedLanguage);
+$(document).ready(function() {
+  $('#languageDropdown').select2();
+  $('#mobileLanguageDropdown').select2();
+
+  // Event listener for language selection
+  $('#languageDropdown').on('change', function() {
+    const selectedLanguage = $(this).val();
+    console.log(selectedLanguage)
+    languageToggler(selectedLanguage);
+  });
+  
+
+  // Event listener for language selection
+  $('#mobileLanguageDropdown').on('change', function() {
+    const selectedLanguage = $(this).val();
+    languageToggler(selectedLanguage);
+  });
 });
-
-languageDropdown.addEventListener('change', (e) => {
-  const selectedLanguage = languageDropdown.value;
-  languageToggler(selectedLanguage);
-});
-
 
