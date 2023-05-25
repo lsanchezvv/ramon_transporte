@@ -543,7 +543,7 @@ const enContent = document.getElementsByClassName('en-content');
 const esContent = document.getElementsByClassName('es-content');
 
 // Add event listeners to the toggle buttons
-function languageToggler (lang, isMobile = false) {
+function languageToggler (lang) {
   // Show English content, hide Spanish content
   let contentToDisplay = enContent
   let contentToHide = esContent
@@ -559,49 +559,20 @@ function languageToggler (lang, isMobile = false) {
   for (let i = 0; i < contentToHide.length; i++) {
     contentToHide[i].style.display = 'none';
   }
-
-  // Update active states of toggle buttons
-  lngButtonViewToggle(lang, isMobile)
 }
 
-function lngButtonViewToggle (lang, isMobile) {
-  if (lang === 'en' && !isMobile) {
-    toggleEnButton.classList.add('active');
-    toggleEsButton.classList.remove('active');
-    return;
-  }
 
-  if (lang === 'en' && isMobile) {
-    mobileToggleEnButton.classList.add('active');
-    mobileToggleEsButton.classList.remove('active');
-    return
-  }
+const mobileLanguageDropdown = document.getElementById('mobileLanguageDropdown');
+const languageDropdown = document.getElementById('languageDropdown');
 
-  if (lang === 'es' && !isMobile) {
-    toggleEsButton.classList.add('active');
-    toggleEnButton.classList.remove('active');
-    return;
-  }
+mobileLanguageDropdown.addEventListener('change', (e) => {
+  const selectedLanguage = mobileLanguageDropdown.value;
+  languageToggler(selectedLanguage);
+});
 
-  if (lang === 'es' && isMobile) {
-    mobileToggleEsButton.classList.add('active');
-    mobileToggleEnButton.classList.remove('active');
-    return;
-  }
-}
-
-toggleEnButton.addEventListener('click', () => languageToggler('en'));
-toggleEsButton.addEventListener('click', () => languageToggler('es'));
-
-toggleEnButton.addEventListener('touchstart', () => languageToggler('en'));
-toggleEsButton.addEventListener('touchstart', () => languageToggler('es'));
-
-mobileToggleEnButton.addEventListener('click', () => languageToggler('en', true));
-mobileToggleEsButton.addEventListener('click', () => languageToggler('es', true));
-
-mobileToggleEnButton.addEventListener('touchstart', () => languageToggler('en', true));
-mobileToggleEsButton.addEventListener('touchstart', () => languageToggler('es', true));
+languageDropdown.addEventListener('change', (e) => {
+  const selectedLanguage = languageDropdown.value;
+  languageToggler(selectedLanguage);
+});
 
 
-mobileToggleEnButton.addEventListener('touchend', () => languageToggler('en', true));
-mobileToggleEsButton.addEventListener('touchend', () => languageToggler('es', true));
